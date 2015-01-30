@@ -1,0 +1,401 @@
+
+/* @Usage:        Caviar example styleguide
+* @Description: Styling of default elements. So no .classes and #id's.
+* @Code style:   http://smacss.com/
+// ---------------------------------------------------------------------- */
+
+html, 
+body {
+    height: 100%;
+    min-height: 100%;
+}
+
+html {
+    font-size: 81.25%; // 13px
+}
+
+body {
+    font-size: 1rem;
+    font-family: "regular", sans-serif;
+}
+
+/* :: BLOCK LEVEL ELEMENTS
+// -------------------------*/
+    h1, h2, h3, h4, h5, h6 {
+        margin: 10px 0 0 0;
+        line-height: 1;
+        font-family: "regular", sans-serif;
+                
+        a {
+            text-decoration: none;
+        }
+
+        small {
+            display: block;
+            color: rgba(0,0,0,0.5);
+        }
+    }
+
+    h1 { 
+        font-size: 3.3rem;
+        
+        small { 
+            font-size: 1.23rem;
+        }
+    }
+
+    h2 { 
+        font-size: 3.17rem;
+
+        small { 
+            font-size: 1.14rem;
+        }
+    }
+    
+    h3 { 
+        font-size: 2.4rem;
+
+        small { 
+            font-size: 1rem;
+        }
+    }
+    
+    h4 { 
+        font-size: 2.15rem;
+
+        small { 
+            font-size: 0.84rem;
+        }
+    }
+    
+    h5 { 
+        font-size: 1.39rem;
+
+        small { 
+            font-size: 0.71rem;
+        }
+    }
+    
+    h6 { 
+        font-size: 1.14rem;
+
+        small { 
+            font-size: 0.56rem;
+        }
+    }
+
+
+    div {}
+    section {}
+    article {}
+    aside {}
+    header {}
+    footer {}
+
+    map {}
+
+    ol {
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    li {
+        margin: 0 0 5px 0;
+    }
+    dl {}
+    dt {
+        font-family: "bold", sans-serif;
+    }
+    dd {
+        margin: 0 0 15px 0;
+    }
+
+    blockquote {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        font-size: 1.06rem;
+        font-style: italic;
+    }
+
+    hgroup {}
+
+    p {
+        margin: 0.5em 0;
+        padding: 0;
+        font-size: 0.96rem;
+        color: rgba(0,0,0,0.7);
+    }
+
+    hr {
+        height: 1px;
+        border: none;
+        background-color: #fff;
+    }
+
+    pre {
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+    progress {}
+    output {}
+
+    form {}
+    textarea {}
+    fieldset {}
+    button {
+        &:focus {
+        }
+    }
+
+    figure {}
+    figcaption {}
+    embed {}
+    video { }
+    object {}
+    canvas {}
+
+    table {}
+    caption {}
+    colgroup {}
+    col {}
+    tr {}
+    th {}
+    thead {}
+    tbody {}
+    tfoot {}
+
+/* :: INLINE ELEMENTS
+// ----------------------------*/
+    a,
+    button,
+    input[type=submit] {
+        color: #333;
+        
+        &:visited {}
+        &:hover,
+        &:active,
+        &:focus { color: #fff; text-decoration: none;}
+    }
+
+    nav {}
+
+    label {}
+    legend {}
+    input {}
+    select {}
+    optgroup {}
+    option {}
+    datalist {}
+
+    abbr {}
+    cite {}
+    q {}
+
+    dfn {}
+    code {}
+    samp {}
+    kbd {}
+    var {}
+    source {}
+
+    address {}
+    area {}
+    mark {}
+    audio {}
+
+    code {}
+
+    del {}
+    ins {}
+
+    details {}
+    summary {}
+    details > summary { cursor: pointer;}
+
+    small {}
+
+    img {
+        max-width: 100%;
+    }
+    span {}
+    em {}
+    strong {}
+    i {}
+    sup {}
+    sub {}
+
+    iframe {}
+
+    tbody {}
+    td {}
+
+    kbd {}
+    var {}
+
+/* :: FORM ELEMENTS
+// -------------------------*/
+    form {}
+
+    fieldset {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    legend {
+        font-size: 0.99rem;
+        color: rgba(0,0,0,0.5);
+    }
+
+    label {
+        display: inline-block;
+        margin: 10px 0 3px 0;
+        font-weight: bold;
+        font-size: 1rem;
+
+        &[for] { cursor: pointer;}
+    }
+
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="text"],
+    input[type="url"],
+    input[type="color"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    textarea {
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 1.25rem;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+        &:focus {
+            border-color: #bd0404;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(189,4,4,.6);
+            outline: none;
+        }
+    }
+    
+    input[type="checkbox"],
+    input[type="radio"] {
+        
+    }
+
+    input[type=color],
+    input[type=file],
+    input[type=range],
+    select { cursor: pointer; }
+
+    select {
+        width: auto;
+        vertical-align: middle;
+        color: #fff;
+        border: none;
+        background-color: #bd0404;
+    }
+
+    optgroup,
+    option {
+        width: 100%;
+    }
+    
+    /* Placeholder style - NOT Combined selectors because it disables styles in FF */
+    ::-webkit-input-placeholder { color: #ccc;}
+    input:-moz-placeholder,
+    textarea:-moz-placeholder { color: #ccc;}
+
+    /* :: TABLE ELEMENTS
+    // -------------------------*/
+    table {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        margin-bottom: 20px;
+        background-color: transparent;
+        border-spacing: 0;
+        border-collapse: collapse;
+        position: relative;
+        z-index: 100;
+    }
+
+    caption {
+        font-family: "semibold", sans-serif;
+        font-size: 1.015rem;
+    }
+
+    thead {}
+    tfoot {}
+    tbody {}
+
+    thead th {
+        font-family: "bold", sans-serif;
+    }
+
+    tfoot td {}
+    tbody td {}
+    tbody > tr:nth-child(odd) {
+        background-color: #f9f9f9;
+    }
+
+    table > thead > tr > th,
+    table > tbody > tr > th,
+    table > tfoot > tr > th,
+    table > thead > tr > td,
+    table > tbody > tr > td,
+    table > tfoot > tr > td {
+      padding: 8px;
+      line-height: 1.4;
+      vertical-align: top;
+      border-top: 1px solid #dddddd;
+      text-align: left;
+    }
+
+    table > thead > tr > th {
+      vertical-align: bottom;
+      border-bottom: 2px solid #dddddd;
+    }
+
+    table > caption + thead > tr:first-child > th,
+    table > colgroup + thead > tr:first-child > th,
+    table > thead:first-child > tr:first-child > th,
+    table > caption + thead > tr:first-child > td,
+    table > colgroup + thead > tr:first-child > td,
+    table > thead:first-child > tr:first-child > td {
+      border-top: 0;
+    }
+
+    table col[class*="col-"] {
+      position: static;
+      float: none;
+      display: table-column;
+    }
+
+    table td[class*="col-"],
+    table th[class*="col-"] {
+      position: static;
+      float: none;
+      display: table-cell;
+    }

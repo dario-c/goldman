@@ -1,0 +1,112 @@
+
+/* :: CAVIAR EXAMPLE STYLEGUIDE
+// -------------------------*/
+
+body.intro {
+    color: #fff;
+    background: #1f1f1f;
+}
+
+.container {
+    max-width: 320px;
+    padding: 10px 20px;
+    
+    .column {
+        display: inline-block;
+        width: 45%;
+        margin-right: 3%;
+        vertical-align: top;
+        
+        p.image {
+            vertical-align: top;
+            
+            img {
+                margin: 0 10px 0 0;
+                float: left;
+            }
+
+            &.right img {
+                margin: 0 0 0 10px;
+                float: right;
+            }
+        }
+    }
+
+    @media all and (min-width: 480px){ 
+        max-width: 768px;
+    }
+    
+    @media all and (min-width: 1024px){
+        max-width: 1024px;
+    }
+    
+    @media all and (min-width: 1280px){
+        max-width: 100%;
+    }
+
+    .intro & {
+        text-align: center;
+
+        h1, 
+        h2 {
+            color: #fff;
+        }
+
+        h1 {
+            font-family: "extralight", sans-serif;
+            font-size: 3.17rem;
+            .font-smoothing;
+        }
+        
+        h2 {
+            font-family: "semibold", sans-serif;
+            font-size: 1.06rem;
+            .font-smoothing;
+        }
+        
+        .inline {
+            display: inline-block;
+            margin: 5px 0 0 0;
+            overflow: hidden;
+            
+            li {
+                width: 15px;
+                height: 15px;
+                margin: 0 5px 0 0;
+                float: left;
+                
+                &.typography { background: #ff7505;}
+                &.list-and-tables { background: #1563b3;}
+                &.media { background: #bd0404;}
+                &.summary { background: #77ba0c;}
+
+                &.typography a:hover { background: lighten(#ff7505, 15%);}
+                &.list-and-tables a:hover { background: lighten(#1563b3, 15%);}
+                &.media a:hover { background: lighten(#bd0404, 15%);}
+                &.summary a:hover { background: lighten(#77ba0c, 15%);}
+                
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    h1.bar { font-size: 1rem;}
+    h2.bar { font-size: 0.84rem; max-width: 320px;}
+
+    .bar {
+        margin: 20px 0;
+        padding: 3px 5px 2px 5px;
+        color: #fff;
+        .font-smoothing;
+        clear: both;
+        
+        .typography& { background: #ff7505;}
+        .list-and-tables& { background: #1563b3;}
+        .media& { background: #bd0404;}
+        .summary& { background: #77ba0c;}
+    }
+}
