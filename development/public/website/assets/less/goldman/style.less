@@ -9,8 +9,8 @@
 /* :: GENERAL LAYOUT
 // -------------------------*/
 
-    header, section, article {
-        width: 50%;
+    section, article, nav {
+        width: 1000px;
         margin: 0 auto;
     }
 
@@ -18,6 +18,7 @@
 // -------------------------*/
 body {
 font-family: "Droid Sans", sans-serif;
+padding-bottom: 376px;
 text-align: center;
 }
    h1 { 
@@ -32,7 +33,7 @@ text-align: center;
         font-size: 3em;
         font-weight: 400;
     }
-    h3, h4 { 
+    h3, h4, .outline h2 { 
         font-family: "nimbus-sans-condensed", sans-serif;
         font-size: 2.4em;
         font-weight: 900;
@@ -41,3 +42,218 @@ text-align: center;
     section {
         text-align: justify;
     }
+
+    .segment p {
+        font-size: 1.40em;
+    }
+
+    /* :: MAIN HEADER
+// -------------------------*/
+
+    article header {
+        position: relative;
+        height: 250px;
+        margin-left: 50px;
+    }
+
+        .header-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }    
+
+        .header-text {
+            position: absolute;
+            top: 120px;
+            left: 135px;
+        }
+
+            h1 span {
+                display: block;
+                font-size: 1rem;
+                margin-top: 45px;
+            }
+
+    /* :: SEGMENTS
+// -------------------------*/
+
+    .segment { 
+        margin: 30px;
+        border-bottom: 10px solid black;
+        padding: 30px;
+        position: relative;
+    }
+    
+    .segment h3 { 
+        text-decoration: underline;
+        display: inline-block;
+        background-color: #ffe402;
+        padding: 10px;
+     }
+    
+    .smaller {
+        width: 750px;
+        margin: 0 auto;
+    }
+
+        /* :: SECTIONS
+// -------------------------*/
+
+    section {
+        position: relative;
+        background-color: #ffe402;
+    }
+
+    .director {
+        margin-top: 138px;
+        height: 570px;
+    }
+
+    .approach {
+        margin-top: 100px;
+        height: 1000px;
+    }
+    
+    .process {
+        margin-top: 106px;
+        height: 925px;
+    }
+
+    /* :: Navigation
+// -------------------------*/
+
+    nav {
+        border-bottom: 10px solid black;
+        border-top: 10px solid black;
+        margin: 0 auto;
+        margin-top: 205px;
+        width: 1000px;
+        height: 285px;
+    }
+
+    nav a {
+        display: block;
+        width: 320px;
+        height: 140px;
+        margin: 0 auto;
+        margin-top: 67px;
+        padding-top: 60px;
+        background-color: #ffe402;
+    }
+
+    /* :: Footer
+// -------------------------*/
+    
+    footer {
+        width: 1192px;
+        margin: 0 auto;
+    }
+
+    footer header {
+        margin: 108px 0 70px 0;
+        background: url("../images/filmmakers-bar.png") no-repeat 50%;
+    }
+
+    footer section {
+        width: 580px;
+        float: right;
+        background-color: inherit;
+    }
+
+    .director-bio {
+        float: left;
+    }
+
+    /* :: VIDEOS
+// -------------------------*/
+
+    video {
+        width: 750px;
+        margin-top: 50px;
+    }
+
+        /* :: IMAGES
+// -------------------------*/
+
+    .img-2006 {
+        width: 330px;
+        margin-top: -150px;
+        margin-left: 804px;
+        margin-bottom: -126px;
+    }
+
+    .img-2007 {
+        width: 1100px;
+        max-width: 1500px;
+        margin: -20px 0 0 -204px;
+    }
+
+    .img-2007-2 {
+        position: absolute;
+        width: 270px;
+        top: -80px;
+        left: 889px;
+        z-index: -1;
+    }
+
+    .img-2007-3 {
+        width: 1016px;
+        max-width: 1500px;
+        margin: 9px 0 -20px -44px;
+    }
+
+    .img-director {
+        position: absolute;
+        width: 1589px;
+        max-width: 1900px;
+        top: -295px;
+        left: -288px;
+        z-index: -1;
+    }
+
+        /* :: STORY-OUTLINE.HTML SPECIFIC
+// -------------------------*/
+
+    .outline .segment {
+        padding: 90px 0 90 0px;
+    }
+
+    .outline .last {
+        border: 0;
+    }
+    
+    .outline h2 {
+        display: inline-block;
+        background-color: #ffe402;
+        padding: 10px;
+    }
+
+    /* :: IMAGES
+// -------------------------*/
+
+    .img-russia {
+        width: 1014px;
+        max-width: 1014px;
+        margin-left: 10px;
+        margin-bottom: -100px;
+    }
+
+    .img-separations {
+        position: absolute;
+        width: 356px;
+        left: -295px;
+        top: -53px;
+    }
+    .img-post-marriage {
+        position: absolute;
+        width: 356px;
+        left: 913px;
+        top: 275px;
+        z-index: -1;
+    }
+
+    .img-chronicles {
+        width: 532px;
+        margin-left: 360px;
+    }
+
