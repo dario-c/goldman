@@ -156,7 +156,14 @@ text-align: center;
             position: absolute;
             top: 0;
             left: 35px;
-        }    
+        }   
+
+        .numbering {
+            font-size: 15px;
+            font-family: inconsolata;
+            position: absolute;
+            z-index: 1;
+        } 
 
         .header-text {
             position: absolute;
@@ -169,6 +176,44 @@ text-align: center;
                 font-size: 1rem;
                 margin-top: 45px;
             }
+
+
+    /* :: Numering
+// -------------------------*/
+
+    .num-1-a {
+        top: 96px;
+        left: 40px;
+    }
+    .num-1-b {
+        top: 206px;
+        left: 580px;
+    }   
+    .num-2-a {
+        top: 426px;
+        left: 20px;
+    }   
+    .num-3-a {
+        top: 1940px;
+        left: 937px;
+    }    
+    .num-4-a {
+        top: 2812px;
+        left: -94px;
+
+    }    
+    .num-4-b {
+        top: 2820px;
+        left: 937px;
+    }    
+    .num-4-c {
+        top: 2820px;
+        left: 937px;
+    }    
+    .num-4-d {
+        top: 2820px;
+        left: 937px;
+    }
 
     /* :: SEGMENTS
 // -------------------------*/
@@ -445,9 +490,10 @@ text-align: center;
     /* :: VIDEOS
 // -------------------------*/
 
-    iframe {
+    .video {
         width: 900px;
         margin-top: 50px;
+        margin: 0 auto;
     }
 
         /* :: IMAGES
@@ -490,6 +536,23 @@ text-align: center;
         z-index: -1;
     }
 
+    .img-process {
+        position: absolute;
+        width: 396px;
+        left: -499px;
+        top: 380px;
+        z-index: -1;
+    }    
+
+    .img-process-2 {
+        position: absolute;
+        width: 256px;
+        left: -96px;
+        top: 969px;
+        z-index: -1;
+    }
+
+
         /* :: STORY-OUTLINE.HTML SPECIFIC
 // -------------------------*/
 
@@ -512,7 +575,7 @@ text-align: center;
     }
 
     .outline .segment {
-        padding-bottom: 100px;
+        padding: 0 50px 100px 50px;
     }
     
     .outline .russia {
@@ -571,13 +634,14 @@ text-align: center;
     .img-post-marriage {
         position: absolute;
         width: 356px;
-        left: 913px;
-        top: 275px;
+        left: 965px;
+        top: 513px;
         z-index: -1;
     }
 
     .img-chronicles {
         width: 532px;
         margin-left: 360px;
+        margin-top: 100px;
     }
 
