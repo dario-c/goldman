@@ -26,6 +26,10 @@
             if(document.body.scrollTop > 2770) {
                 $("#cross-three").find(".crossing-line").removeClass("hide");
             }
+
+            if(document.body.scrollTop > 3980) {
+                $("#cross-four").find(".crossing-line").removeClass("hide");
+            }
         };
 
         var init = function ()
