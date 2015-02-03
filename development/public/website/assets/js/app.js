@@ -14,6 +14,7 @@
 
         var init = function ()
         {
+            ns.pageInteractionInstance = new ns.PageInteraction();
         };
 
         init();
