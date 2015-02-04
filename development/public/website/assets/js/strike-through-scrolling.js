@@ -11,13 +11,15 @@
      */
     ns.strikeThroughOnScroll = function()
     {
-        var $strikeElements = $(".strike-through");
-        var averageCharWidth = 10.6;
-        var lineHeight = $strikeElements.first().css("lineHeight").replace("px", "") *1;
-        var strikeElementsData = [];
         var $window = ns.$win;
         var currentScrollPos = $window.scrollTop();
-        var scrollThresHold = 50; // Threshold in pixels for actual dom injection
+        var $strikeElements = $(".strike-through");
+        var lineHeight = $strikeElements.first().css("lineHeight").replace("px", "") *1;
+            
+        var strikeElementsData = [];
+        var scrollThresHold = 200; // Threshold in pixels for actual dom injection
+        var defaultCharWidth = 10.6;
+        var BoldCharWidth = 11;
 
         var init = function()
         {
@@ -47,6 +49,7 @@
                 var elementData = {};
                 var $strikeContainer = $("<div class=\"strike-container\"></div>");
 
+
                 // Get all separate lines
                 $.each(linesInElement, function(j, line)
                 {
@@ -56,19 +59,19 @@
                     lines.push({
                         $element: $line,
                         copy: $line.text(), // Remove whitespace
-                        width: $line.text().length * averageCharWidth
+                        width: $line.text().length * defaultCharWidth
                     });
 
                     // Append the bar for animation
                     var strikeBar = $("<span class=\"strike-bar\"></span>");
                     strikeBar.css({
-                        maxWidth: $line.text().length * averageCharWidth,
+                        maxWidth: $line.text().length * defaultCharWidth,
                         left: $line.position().left - 5,
                         top: (j * lineHeight) + 8
                     });
-
                     $strikeContainer.append(strikeBar);
 
+                    // Append the container
                     if(j === linesInElement.length-1)
                     {
                         $element.append($strikeContainer);
@@ -86,7 +89,7 @@
                 strikeElementsData.push(elementData);
             });
 
-            // console.log(strikeElementsData);
+            console.log(strikeElementsData);
         };
 
         /**
@@ -98,22 +101,22 @@
             var scrollTop = $window.scrollTop();
             var winHeight = $window.height();
             var docHeight = ns.$doc.height();
-            var scrolledFarEnough = (scrollTop + winHeight) >= (docHeight - scrollThresHold);
             
-            $.each(strikeElementsData, function(i, strikeEl)
+            $.each(strikeElementsData, function(i, paragraph)
             {
-                var elOffsetTop = strikeEl.top;
+                var elOffsetTop = paragraph.top;
 
-                if(!strikeEl.striked && scrollTop >= (elOffsetTop - scrollThresHold))
+                if(!paragraph.striked && scrollTop >= (elOffsetTop - scrollThresHold))
                 {
-                    $.each(strikeEl.lines, function(j, line)
-                    {
-                        line.$element.find(".strike-bar").css({
-                            width: line.width
-                        });
-                    });
+                    console.log("Strike paragraph, ", paragraph.index);
+                    // $.each(paragraph.lines, function(j, line)
+                    // {
+                    //     line.$element.find(".strike-bar").css({
+                    //         width: line.width
+                    //     });
+                    // });
 
-                    strikeEl.striked = true;
+                    paragraph.striked = true;
                 }
             });
 
