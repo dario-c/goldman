@@ -16,7 +16,7 @@
         var $strikeElements = $(".strike-through");
 
         var strikeElementsData = [];
-        var scrollThresHold = 200; // Threshold in pixels for actual dom injection
+        var scrollThresHold = 400; // Threshold in pixels for actual dom injection
         
         var defaultCharWidth = 10.6;
         var boldCharWidth = 13.3;
@@ -50,7 +50,8 @@
                 var linesInElement = $element.find(".line");
                 var elementData = {};
                 var $strikeContainer = $("<div class=\"strike-container\"></div>");
-
+                var charWidth = ($element.hasClass("bold")) ? boldCharWidth : defaultCharWidth;
+                var topFix = ($element.hasClass("bold")) ? boldTopLineHeightFix : topLineHeightFix;
 
                 // Get all separate lines
                 $.each(linesInElement, function(j, line)
@@ -60,8 +61,9 @@
                     // Calculate line width
                     lines.push({
                         $element: $line,
+                        part: 0,
                         copy: $line.text(), // Remove whitespace
-                        width: $line.text().length * defaultCharWidth
+                        width: $line.text().length * charWidth
                     });
 
                     // Append the bar for animation
@@ -69,9 +71,9 @@
                     var lineHeight = $element.css("lineHeight").replace("px", "") *1;
 
                     strikeBar.css({
-                        maxWidth: $line.text().length * defaultCharWidth,
+                        maxWidth: $line.text().length * charWidth,
                         left: $line.position().left - 5,
-                        top: (j * lineHeight) + topLineHeightFix
+                        top: (j * lineHeight) + topFix
                     });
                     $strikeContainer.append(strikeBar);
 
@@ -106,9 +108,7 @@
             var scrollTop = $window.scrollTop();
             var winHeight = $window.height();
             var docHeight = ns.$doc.height();
-            
-            console.log(scrollTop);
-                        
+
             $.each(strikeElementsData, function(i, paragraph)
             {
                 var elOffsetTop = paragraph.top;
@@ -118,27 +118,20 @@
                     // console.log("Strike paragraph, ", paragraph.index);
                     $.each(paragraph.lines, function(j, line)
                     {
-                        $(paragraph.$container.find(".strike-bar")[j]).animate({
-                            width: "100%"
-                        });
-                    });
+                        console.log(line.part);
 
-                    paragraph.striked = true;
+                        $(paragraph.$container.find(".strike-bar")[j]).css({
+                            width: line.part + "%"
+                        });
+
+                        if(line.part <= 100)
+                        {
+                            line.part += 5;
+                        }
+                    });
                 }
             });
-
-            // // Update scroll position
-            // currentScrollPos = scrollTop;
         };
-
-        /**
-        * Grow bar
-        *
-        */
-        var strikeLine = function()
-        {
-        };
-
 
         init();
     };
