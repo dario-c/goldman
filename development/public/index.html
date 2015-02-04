@@ -101,13 +101,13 @@
     <!-- endbuild -->
 
     <script>
-        // Modernizr.load([{
-        //     load: "//use.typekit.net/zbl0ykr.js",
-        //     complete: function ()
-        //     {
-        //         try{Typekit.load();}catch(e){}
-        //     }
-        // }]);
+        Modernizr.load([{
+            load: "//use.typekit.net/zbl0ykr.js",
+            complete: function ()
+            {
+                try{Typekit.load();}catch(e){}
+            }
+        }]);
     </script>
 </head>
 <body>
@@ -150,14 +150,16 @@
             </div>
         
             <p class="strike-through">
-                THE EVENTS RECOUNTED IN DUPLICITY REFLECT THE LAST FOUR YEARS OF MY LIFE<br>
-                AND REVEAL, WITH SHOCKING DETAIL, THE CRIMINAL ACTIVITIES CARRIED OUT BY A<br>
-                NEFARIOUS GROUP OF PEOPLE WHO, CONSEQUENTLY, STAND TO LOSE EVERYTHING,<br>
-                INCLUDING THEIR FREEDOM. IN THE INTEREST OF PROTECTING  THE INNOCENT,<br>
-                THE NAMES OF CERTAIN PEOPLE, PLACES AND DATES HAVE BEEN CHANGED.
+                <span class="line"><span class="highlight">THE EVENTS</span> RECOUNTED IN DUPLICITY REFLECT THE LAST FOUR YEARS OF MY LIFE</span>
+                <span class="line">AND REVEAL, WITH SHOCKING DETAIL, THE CRIMINAL ACTIVITIES CARRIED OUT BY A</span>
+                <span class="line">NEFARIOUS GROUP OF PEOPLE WHO, CONSEQUENTLY, STAND TO LOSE EVERYTHING,</span>
+                <span class="line">INCLUDING THEIR FREEDOM. IN THE INTEREST OF PROTECTING  THE INNOCENT,</span>
+                <span class="line">THE NAMES OF CERTAIN PEOPLE, PLACES AND DATES HAVE <span class="highlight">BEEN CHANGED.</span></span>
             </p>
 
-            <p class="strike-through">ASIDE FROM THAT, HOWEVER, <span class="stand-out"> THIS STORY </span> IS AS ACCURATE AS IT IS UNBELIEVABLE.</p>
+            <p class="strike-through">
+                <span class="line">ASIDE FROM THAT, HOWEVER, <span class="highlight">THIS STORY</span> IS AS ACCURATE AS IT <span class="highlight">IS UNBELIEVABLE.</span></span>
+            </p>
             <p>— PAUL T. GOLDMAN</p>
             
         </div>   

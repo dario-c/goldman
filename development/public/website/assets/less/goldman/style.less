@@ -23,9 +23,33 @@ body {
     text-align: center;
 }
 
+
+
+
 .strike-through {
-    font-size: 20px !important;
+    // font-size: 20px !important;
+    // line-height: 1;
+    
+    .highlight {
+        display: inline-block;
+        position: relative;
+        z-index: 10;
+        background: #f00;
+    }
+
+    .strike-bar {
+        display: inline-block;
+        // width: 100%;
+        width: 0;
+        height: 9px;
+        background: #000;
+        position: relative;
+        top: -23px;
+    }
 }
+
+
+
 
    article header h1 { 
         font-family: "nimbus-sans-condensed", sans-serif;

@@ -1,5 +1,3 @@
-window.Caviar = window.Caviar || {};
-
 /**
 * Strike through line of copy on scroll
 *
@@ -14,6 +12,8 @@ window.Caviar = window.Caviar || {};
     ns.strikeThroughOnScroll = function()
     {
         var $strikeElements = $(".strike-through");
+        var averageCharWidth = 12;
+        var lineHeight = $strikeElements.first().css("lineHeight").replace("px", "") *1;
         var strikeElementsData = [];
         var $window = ns.$win;
         var currentScrollPos = $window.scrollTop();
@@ -21,10 +21,8 @@ window.Caviar = window.Caviar || {};
 
         var init = function()
         {
-            console.log($window.scrollTop());
-
-            // Store all data of elements that need striking
-            storeStrikeElements();
+            // Check all elements that need striking
+            checkStrikeElements();
 
             // Do stuff when scrolling
             $window.on("scroll", function()
@@ -34,14 +32,47 @@ window.Caviar = window.Caviar || {};
         };
 
         /**
+        * 
         * Store all elements with their offset
-        *
+        * Prepare all elements with strike bars
         */
-        var storeStrikeElements = function()
+        var checkStrikeElements = function()
         {
             $.each($strikeElements, function(i, element)
             {
-                var elementData = { "index": i, "top": $(element).offset().top, "striked": false };
+                // Store data
+                var $element = $(element);
+                var lines = [];
+                var linesInElement = $element.find(".line");
+                // var linesInElement = $element.html().split("<br>");
+                var elementData = {};
+                
+                // Get all separate lines
+                $.each(linesInElement, function(j, line)
+                {
+                    var $line = $(line);
+
+                    // Calculate line width
+                    lines.push({
+                        $element: $line,
+                        copy: $line.text(), // Remove whitespace
+                        width: $line.text().length * averageCharWidth
+                    });
+
+                    // Append the bar for animation
+                    var strikeBar = $("<span class=\"strike-bar\"></span>");
+                    strikeBar.css({ left: $line.position().left - 5 });
+                    $line.append(strikeBar);
+                });
+                
+                // Store data
+                elementData.index = i;
+                elementData.top = $element.offset().top;
+                elementData.striked = false;
+                elementData.$element = $element;
+                elementData.lines = lines;
+
+                // Store element data
                 strikeElementsData.push(elementData);
             });
 
@@ -65,7 +96,12 @@ window.Caviar = window.Caviar || {};
 
                 if(!strikeEl.striked && scrollTop >= (elOffsetTop - scrollThresHold))
                 {
-                    console.log("Strike: ", strikeEl.index);
+                    $.each(strikeEl.lines, function(j, line)
+                    {
+                        line.$element.find(".strike-bar").css({
+                            width: line.width
+                        });
+                    });
 
                     strikeEl.striked = true;
                 }
@@ -79,13 +115,8 @@ window.Caviar = window.Caviar || {};
         * Grow bar
         *
         */
-        var strikeThrough = function()
+        var strikeLine = function()
         {
-            // var length = element.innerWidth() + "px"
-            // var leftPos = element.position().left - 6 + "px";
-            // var topPos =  element.position().top + 4 + "px";
-
-            // bar.css({ width: length, left: leftPos, top: topPos})
         };
 
 
