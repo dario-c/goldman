@@ -88,6 +88,7 @@
                 elementData.striked = false;
                 elementData.$element = $element;
                 elementData.lines = lines;
+                elementData.$container = $strikeContainer;
 
                 // Store element data
                 strikeElementsData.push(elementData);
@@ -106,19 +107,21 @@
             var winHeight = $window.height();
             var docHeight = ns.$doc.height();
             
+            console.log(scrollTop);
+                        
             $.each(strikeElementsData, function(i, paragraph)
             {
                 var elOffsetTop = paragraph.top;
 
                 if(!paragraph.striked && scrollTop >= (elOffsetTop - scrollThresHold))
                 {
-                    console.log("Strike paragraph, ", paragraph.index);
-                    // $.each(paragraph.lines, function(j, line)
-                    // {
-                    //     line.$element.find(".strike-bar").css({
-                    //         width: line.width
-                    //     });
-                    // });
+                    // console.log("Strike paragraph, ", paragraph.index);
+                    $.each(paragraph.lines, function(j, line)
+                    {
+                        $(paragraph.$container.find(".strike-bar")[j]).animate({
+                            width: "100%"
+                        });
+                    });
 
                     paragraph.striked = true;
                 }
