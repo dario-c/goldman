@@ -49,8 +49,8 @@
         gulp.watch(config.js_files, "", ["jshint", reload]);
 
         // Watch .tpl & .html files
-        gulp.watch(config.templates, "", ["inject", reload]);
-        gulp.watch(config.html, "", ["inject", reload]);
+        gulp.watch(config.templates, "", ["", reload]);
+        gulp.watch(config.html, "", ["", reload]);
     });
     //--------------------
 
