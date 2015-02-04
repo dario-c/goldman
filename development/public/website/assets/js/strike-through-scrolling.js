@@ -14,12 +14,14 @@
         var $window = ns.$win;
         var currentScrollPos = $window.scrollTop();
         var $strikeElements = $(".strike-through");
-        var lineHeight = $strikeElements.first().css("lineHeight").replace("px", "") *1;
-            
+
         var strikeElementsData = [];
         var scrollThresHold = 200; // Threshold in pixels for actual dom injection
+        
         var defaultCharWidth = 10.6;
-        var BoldCharWidth = 11;
+        var boldCharWidth = 13.3;
+        var topLineHeightFix = 8;
+        var boldTopLineHeightFix = 11;
 
         var init = function()
         {
@@ -64,10 +66,12 @@
 
                     // Append the bar for animation
                     var strikeBar = $("<span class=\"strike-bar\"></span>");
+                    var lineHeight = $element.css("lineHeight").replace("px", "") *1;
+
                     strikeBar.css({
                         maxWidth: $line.text().length * defaultCharWidth,
                         left: $line.position().left - 5,
-                        top: (j * lineHeight) + 8
+                        top: (j * lineHeight) + topLineHeightFix
                     });
                     $strikeContainer.append(strikeBar);
 
@@ -89,7 +93,7 @@
                 strikeElementsData.push(elementData);
             });
 
-            console.log(strikeElementsData);
+            // console.log(strikeElementsData);
         };
 
         /**
