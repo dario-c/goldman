@@ -12,7 +12,7 @@
     ns.strikeThroughOnScroll = function()
     {
         var $strikeElements = $(".strike-through");
-        var averageCharWidth = 12;
+        var averageCharWidth = 10.6;
         var lineHeight = $strikeElements.first().css("lineHeight").replace("px", "") *1;
         var strikeElementsData = [];
         var $window = ns.$win;
@@ -44,9 +44,9 @@
                 var $element = $(element);
                 var lines = [];
                 var linesInElement = $element.find(".line");
-                // var linesInElement = $element.html().split("<br>");
                 var elementData = {};
-                
+                var $strikeContainer = $("<div class=\"strike-container\"></div>");
+
                 // Get all separate lines
                 $.each(linesInElement, function(j, line)
                 {
@@ -61,8 +61,18 @@
 
                     // Append the bar for animation
                     var strikeBar = $("<span class=\"strike-bar\"></span>");
-                    strikeBar.css({ left: $line.position().left - 5 });
-                    $line.append(strikeBar);
+                    strikeBar.css({
+                        maxWidth: $line.text().length * averageCharWidth,
+                        left: $line.position().left - 5,
+                        top: (j * lineHeight) + 8
+                    });
+
+                    $strikeContainer.append(strikeBar);
+
+                    if(j === linesInElement.length-1)
+                    {
+                        $element.append($strikeContainer);
+                    }
                 });
                 
                 // Store data

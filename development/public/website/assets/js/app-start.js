@@ -6,5 +6,8 @@
 document.addEventListener("DOMContentLoaded", function(event)
 {
     "use strict";
-    var Application = new window.Caviar.Application();
+    setTimeout(function()
+    {
+        var Application = new window.Caviar.Application();
+    }, 1000);
 });
