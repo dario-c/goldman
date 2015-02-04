@@ -21,6 +21,7 @@
 body {
 font-family: "Droid Sans", sans-serif;
 text-align: center;
+color: #000;
 }
    article header h1 { 
         font-family: "nimbus-sans-condensed", sans-serif;
@@ -63,6 +64,7 @@ text-align: center;
         }
 
         li {
+            // color: red;
             font-weight: 100;
             line-height: 45px;
             font-size: 20px;
@@ -566,6 +568,11 @@ text-align: center;
         background-color: @yellow;
     }
 
+    nav a:hover {
+        background-color: lighten(@yellow, 20%);
+        color: black;
+    }
+
     /* :: Footer
 // -------------------------*/
     
@@ -590,6 +597,9 @@ text-align: center;
     }
     
     a { text-decoration: none;}
+
+    footer a:hover { color: #7e7e7e}
+
     /* :: VIDEOS
 // -------------------------*/
 
