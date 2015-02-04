@@ -86,9 +86,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <script src="//use.typekit.net/zbl0ykr.js"></script>
-    <script>try{Typekit.load();}catch(e){}</script>
- 
     <!-- build:css website/assets/css/styles.css -->
         <!-- inject:css -->
         <link rel="stylesheet" href="website/assets/css/elements.css">
@@ -102,6 +99,16 @@
         <script src="website/assets/js/lib/head.modernizr.js"></script>
         <!-- endinject -->
     <!-- endbuild -->
+
+    <script>
+        Modernizr.load([{
+            load: "//use.typekit.net/zbl0ykr.js",
+            complete: function ()
+            {
+                try{Typekit.load();}catch(e){}
+            }
+        }]);
+    </script>
 </head>
 <body>
 
@@ -313,7 +320,6 @@
             </ul>
         </section>
     </footer>
-
 
     <!-- build:js website/assets/js/application.js -->
         <!-- bower:js -->
