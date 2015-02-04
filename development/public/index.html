@@ -83,7 +83,7 @@
     <meta name="msapplication-TileImage" content="/website/assets/images/favicons/mstile-144x144.png">
 
     <!-- VIEWPORT -->
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=1250" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
     <!-- build:css website/assets/css/styles.css -->
@@ -101,13 +101,13 @@
     <!-- endbuild -->
 
     <script>
-        Modernizr.load([{
-            load: "//use.typekit.net/zbl0ykr.js",
-            complete: function ()
-            {
-                try{Typekit.load();}catch(e){}
-            }
-        }]);
+        // Modernizr.load([{
+        //     load: "//use.typekit.net/zbl0ykr.js",
+        //     complete: function ()
+        //     {
+        //         try{Typekit.load();}catch(e){}
+        //     }
+        // }]);
     </script>
 </head>
 <body>
@@ -120,7 +120,8 @@
                     <img src="website/assets/images/header-background.png" alt="">
                 </div>
                 <p class="numbering num-1-a">1a.</p>
-                <p class="numbering num-1-b">1b.</p>                <p class="numbering num-2-a">2a.</p>
+                <p class="numbering num-1-b">1b.</p>
+                <p class="numbering num-2-a">2a.</p>
                 <p class="numbering num-3-a">3a.</p>
                 <p class="numbering num-4-a">4a.</p>
                 <p class="numbering num-4-b">4b.</p>
@@ -135,7 +136,7 @@
                 AGAINST THE TRUE STORY OF HIS LIFE</p>
         </header>
         <div class="video">
-            <iframe src="http://player.vimeo.com/video/112750070?title=0&byline=0&badge=0&api=1&color=ffe402" width="896" height="504" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <!-- <iframe src="http://player.vimeo.com/video/112750070?title=0&byline=0&badge=0&api=1&color=ffe402" width="896" height="504" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
         </div>
 
         <div id="cross-out-1" class="segment">
@@ -148,16 +149,15 @@
                 <div class="crossing-line hide one-6"></div>
             </div>
         
-            <p>THE EVENTS RECOUNTED IN DUPLICITY REFLECT THE LAST FOUR YEARS OF MY LIFE 
-            <br>
-            AND REVEAL, WITH SHOCKING DETAIL, THE CRIMINAL ACTIVITIES CARRIED OUT BY A 
-            <br>
-            NEFARIOUS GROUP OF PEOPLE WHO, CONSEQUENTLY, STAND TO LOSE EVERYTHING, 
-            <br>
-            INCLUDING THEIR FREEDOM. IN THE INTEREST OF PROTECTING  THE INNOCENT,
-            <br>
-            THE NAMES OF CERTAIN PEOPLE, PLACES AND DATES HAVE BEEN CHANGED.</p>
-            <p>ASIDE FROM THAT, HOWEVER, <span class="stand-out"> THIS STORY </span> IS AS ACCURATE AS IT IS UNBELIEVABLE.</p>
+            <p class="strike-through">
+                THE EVENTS RECOUNTED IN DUPLICITY REFLECT THE LAST FOUR YEARS OF MY LIFE<br>
+                AND REVEAL, WITH SHOCKING DETAIL, THE CRIMINAL ACTIVITIES CARRIED OUT BY A<br>
+                NEFARIOUS GROUP OF PEOPLE WHO, CONSEQUENTLY, STAND TO LOSE EVERYTHING,<br>
+                INCLUDING THEIR FREEDOM. IN THE INTEREST OF PROTECTING  THE INNOCENT,<br>
+                THE NAMES OF CERTAIN PEOPLE, PLACES AND DATES HAVE BEEN CHANGED.
+            </p>
+
+            <p class="strike-through">ASIDE FROM THAT, HOWEVER, <span class="stand-out"> THIS STORY </span> IS AS ACCURATE AS IT IS UNBELIEVABLE.</p>
             <p>— PAUL T. GOLDMAN</p>
             
         </div>   
@@ -183,10 +183,12 @@
                 <div class="crossing-line hide ten"></div>
             </div>
 
-            <p>“THIS COULDN’T BE MY LIFE. THIS WAS SOMETHING THAT HAPPENED
-            IN A BAD MOVIE TO SOME DELUSIONAL GUY WHO MERITED THE
-            DECEPTION. THIS WAS SOMETHING THAT HAPPENED TO SOMEBODY
-            ELSE. THIS WAS NOT SOMETHING THAT HAPPENED TO ME.”</p>
+            <p class="strike-through">
+                "THIS COULDN’T BE MY LIFE. THIS WAS SOMETHING THAT HAPPENED<br/>
+                IN A BAD MOVIE TO SOME DELUSIONAL GUY WHO MERITED THE<br/>
+                DECEPTION. THIS WAS SOMETHING THAT HAPPENED TO SOMEBODY<br/>
+                ELSE. THIS WAS NOT SOMETHING THAT HAPPENED TO ME.<br/>
+            </p>
         </div>
 
         <div class="segment small-2007 timeline">
@@ -331,6 +333,7 @@
         <script src="website/assets/js/app-start.js"></script>
         <script src="website/assets/js/app.js"></script>
         <script src="website/assets/js/page-interaction.js"></script>
+        <script src="website/assets/js/strike-through-scrolling.js"></script>
         <!-- endinject -->
     <!-- endbuild -->
 </body>
