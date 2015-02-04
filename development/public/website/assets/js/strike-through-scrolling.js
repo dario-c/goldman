@@ -12,12 +12,13 @@
     ns.strikeThroughOnScroll = function()
     {
         var $window = ns.$win;
+        
         var currentScrollPos = $window.scrollTop();
-        var $strikeElements = $(".strike-through");
-
-        var strikeElementsData = [];
         var scrollThresHold = 400; // Threshold in pixels for actual dom injection
         
+        // Lines (width calculation)
+        var $strikeElements = $(".strike-through");
+        var strikeElementsData = [];
         var defaultCharWidth = 10.6;
         var boldCharWidth = 13.3;
         var topLineHeightFix = 8;
@@ -115,11 +116,9 @@
 
                 if(!paragraph.striked && scrollTop >= (elOffsetTop - scrollThresHold))
                 {
-                    // console.log("Strike paragraph, ", paragraph.index);
+                    // Loop each line
                     $.each(paragraph.lines, function(j, line)
                     {
-                        console.log(line.part);
-
                         $(paragraph.$container.find(".strike-bar")[j]).css({
                             width: line.part + "%"
                         });
