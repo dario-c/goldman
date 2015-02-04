@@ -13,8 +13,8 @@
     {
         var $window = ns.$win;
         
-        var currentScrollPos = $window.scrollTop();
-        var scrollThresHold = 400; // Threshold in pixels for actual dom injection
+        var lastScrollTop = 0;
+        var scrollThresHold = 600; // Threshold in pixels for actual dom injection
         
         // Lines (width calculation)
         var $strikeElements = $(".strike-through");
@@ -109,27 +109,40 @@
             var scrollTop = $window.scrollTop();
             var winHeight = $window.height();
             var docHeight = ns.$doc.height();
+            var scrollDown = (scrollTop > lastScrollTop) ? true : false;
 
             $.each(strikeElementsData, function(i, paragraph)
             {
                 var elOffsetTop = paragraph.top;
 
-                if(!paragraph.striked && scrollTop >= (elOffsetTop - scrollThresHold))
+                if(scrollDown && (scrollTop >= (elOffsetTop - scrollThresHold)))
                 {
                     // Loop each line
                     $.each(paragraph.lines, function(j, line)
                     {
+                        line.part = (line.part < 100) ? line.part += 5 : 100;
+
                         $(paragraph.$container.find(".strike-bar")[j]).css({
                             width: line.part + "%"
                         });
+                    });
+                }
+                else if(!scrollDown && (scrollTop <= (elOffsetTop - scrollThresHold)))
+                {
+                    // Loop each line
+                    $.each(paragraph.lines, function(j, line)
+                    {
+                        line.part -= 5;
 
-                        if(line.part <= 100)
-                        {
-                            line.part += 5;
-                        }
+                        $(paragraph.$container.find(".strike-bar")[j]).css({
+                            width: line.part + "%"
+                        });
                     });
                 }
             });
+
+            // Save scroll for direction
+            lastScrollTop = scrollTop;
         };
 
         init();
