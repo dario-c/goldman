@@ -26,7 +26,7 @@ body {
     // -------------------------*/
 
     .main-header {
-        background: url("../images/header-background.jpg") no-repeat 23px 10px;
+        background: url("../images/header-background.jpg") no-repeat 23px 8px;
         position: relative;
         width: 1000px;
         margin: 25px 0 0 0;
@@ -37,9 +37,11 @@ body {
             font-size: 60px;
             font-weight: 900;
             letter-spacing: 8px;
+            margin-bottom: 0;
         }
         .sub-text {
             display: block;
+            letter-spacing: 0px;
             font-size: 1rem;
             margin-top: 45px;
         }
@@ -51,8 +53,11 @@ body {
     .segment {
         margin: 0 0 0 0;
         position: relative;
-        padding: 60px 0 60px 0; 
-
+        padding: 30px 0 30px 0; 
+        
+        &.intro p {
+            margin: 0;
+        }
         
         &.bar {
             border-bottom: 10px solid black;
@@ -60,15 +65,19 @@ body {
         }
 
         &.extra-padding {
-            padding: 90px 0 93px 0; 
+            padding: 50px 0 50px 0;
         }
 
         &.cross-out-3 {
-            padding: 30px 0 87px 0; 
+            padding: 10px 0 42px 0; 
         }
 
         &.segment-2006 {
-            padding: 51px 0 93px 0;
+            padding: 21px 0 53px 0;
+        }        
+
+        &.segment-FBI {
+            padding-top: 70px;
         }
 
         &.year {
@@ -84,6 +93,7 @@ body {
                 text-decoration: underline;
                 background-color: @yellow;
                 display: inline-block; 
+                margin-bottom: 26px;
                 padding: 10px;
                 font-size: 30px;
                 font-family: "Inconsolata";
@@ -91,13 +101,14 @@ body {
             }         
            hr {
                 margin-left: 1px;
+                margin-top: 30px; 
                 height: 10px;
                 width: 460px;
                 background-color: #000;
             }
 
             &.decision {
-                padding: 74px 0 60px 0;
+                padding: 66px 0 48px 0;
                 p { 
                     padding: 44px;
                     background-color: @yellow; 
@@ -107,6 +118,7 @@ body {
         }
 
         p {
+            margin: 30px 0;
             font-family: "nimbus-sans-condensed", sans-serif;
             font-size: 30px;
             line-height: 35px;
@@ -202,7 +214,7 @@ body {
             margin: 0 auto;
 
             header {
-                margin: 108px 0 70px 0;
+                margin: 96px 0 55px 0;
                 background: url("../images/filmmakers-bar.png") no-repeat center;
 
                 h1 {
@@ -223,6 +235,7 @@ body {
                 h3 {
                     font-family: "nimbus-sans-condensed", sans-serif;
                     font-size: 20px;
+                    line-height: 0px;
                     text-align: left;
                 }
                 p {
@@ -232,7 +245,10 @@ body {
                 ul {
                     padding: 0;
                     text-align: left;
+                    line-height: 29px;
+                    list-style: none;
                 }
+               
                 a { text-decoration: none;}
 
                 a:hover, a:visited { color: #7e7e7e}
