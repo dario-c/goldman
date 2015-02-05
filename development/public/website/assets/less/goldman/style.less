@@ -8,242 +8,271 @@
 
 @yellow: #ffe402;
 
-/* :: GENERAL LAYOUT
-// -------------------------*/
-
-    section, article, nav {
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
-/* :: FONTS AND TEXT
-// -------------------------*/
 body {
     font-family: "Droid Sans", sans-serif;
     text-align: center;
     color: #000;
 }
 
-
-
-
-.strike-through {
-    position: relative;
-    line-height: 1;
-    
-    .highlight {
-        display: inline-block;
-        position: relative;
-        z-index: 10;
-        background: #fff;
-    }
-    
-    .strike-container {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        // background: rgba(0,0,0,0.4);
-    }
-
-    .strike-bar {
-        display: block;
-        // width: 100%;
-        width: 0;
-        height: 9px;
-        background: #000;
-        position: absolute;
-    }
-}
-
-
-
-   article header h1 { 
-        font-family: "nimbus-sans-condensed", sans-serif;
-        font-size: 60px;
-        font-weight: 900;
-        letter-spacing: 8px;
-        margin-bottom: 20px;
-
-        span {
-            font-size: 20px;
-            font-weight: 900;
-            letter-spacing: 2px;
-        }
-    }
-    h2 { 
-        font-family: "Inconsolata", sans-serif;
-        font-size: 3em;
-        font-weight: 400;
-    }
-    h3, h4, .outline h2 { 
-        font-family: "nimbus-sans-condensed", sans-serif;
-        font-size: 2.4em;
-        font-weight: 900;
-    }
-
-    section {
-        font-family: "Droid Sans", sans-serif;
-        text-align: justify;
-        font-size: 20px;
-        padding: 15px;
-        line-height: 40px;
-        
-        h2 {
-            font-family: "nimbus-sans-condensed", sans-serif;
-            font-size: 30px;
-            font-weight: 800;
-        }        
-        p {
-            font-size: 20px;
-        }
-
-        li {
-            // color: red;
-            font-weight: 100;
-            line-height: 45px;
-            font-size: 20px;
-        }
-    }
-
-    article header p {
-        font-family: "nimbus-sans-condensed", sans-serif;
-        font-size: 30px;
-        font-weight: 900;
-    }
-
-    .segment p {
-        font-family: "nimbus-sans-condensed", sans-serif;
-        font-size: 30px;
-        line-height: 1;
-        font-weight: 900;
-    }    
-
-    #cross-out-1 p {
-        font-size: 25px;
-    }
-
-    .timeline {
-        p, h3 {
-            font-family: "Droid Sans", sans-serif;
-            font-size: 20px;
-            font-weight: 300;
-            letter-spacing: 1px;
-            line-height: 30px;
-        }
-        h3 {
-            font-size: 30px;
-            font-family: "Inconsolata"
-        }
-    }
-    nav {
-        font-family: "Droid Sans", sans-serif;
-        font-size: 20px;
-        span {
-            font-family: "nimbus-sans-condensed", sans-serif;
-            font-size: 30px;
-            font-weight: 900;
-        }
-    }
-
-    footer {
-        h2 {
-            font-family: "nimbus-sans-condensed", sans-serif;
-            letter-spacing: 5px;
-            font-size: 60px;
-            font-weight: 900;
-        }
-        p { 
-            font-size: 15px;
-        }
-
-        h3 {
-            font-family: "nimbus-sans-condensed", sans-serif;
-            font-size: 20px;
-        }
-
-        li {
-            font-size: 15px;
-            list-style-type: none;
-        }
-    }
-
-    .outline {
-        p { 
-            font-family: "Droid Sans", sans-serif;
-            font-size: 20px;
-            font-weight: 300;
-            letter-spacing: 1px;
-            line-height: 30px;
-        }
-
-        h2 {
-            font-family: "nimbus-sans-condensed", sans-serif;
-            font-size: 30px;
-        }
-    }
-
-    /* :: MAIN HEADER
+/* :: GENERAL LAYOUT
 // -------------------------*/
 
-    article header > div {
-        background: url("../images/header-background.png") no-repeat 75% -13%;
-        position: relative;
-        height: 250px;
-        width: 1000px;
-        padding-top: 110px;
-        margin-bottom: 100px;
+    .page-container {
+        max-width: 1000px;
         margin: 0 auto;
     }
 
-        .header-img {
-            position: absolute;
-            top: 0;
-            left: 35px;
-        }   
+    /* :: MAIN HEADER
+    // -------------------------*/
 
-        .header-text {
-            text-align: center;
-            // position: absolute;
-            // top: 110px;
-            // left: 161px;
+    .main-header {
+        background: url("../images/header-background.jpg") no-repeat 23px 10px;
+        position: relative;
+        width: 1000px;
+        margin: 25px 0 0 0;
+        padding-top: 80px;
+
+        h1 {
+            font-family: "nimbus-sans-condensed", sans-serif;
+            font-size: 60px;
+            font-weight: 900;
+            letter-spacing: 8px;
         }
-        p.numbering,.outline .numbering {
-            font-size: 15px;
-            font-family: inconsolata;
-            position: absolute;
-            z-index: 1;
-        } 
+        .sub-text {
+            display: block;
+            font-size: 1rem;
+            margin-top: 45px;
+        }
+    }
 
+    /* :: ARTICLE'S SEGMENTS
+    // -------------------------*/
 
-            h1 span {
-                display: block;
-                font-size: 1rem;
-                margin-top: 45px;
+    .segment {
+        margin: 0 0 0 0;
+        position: relative;
+        padding: 60px 0 60px 0; 
+
+        
+        &.bar {
+            border-bottom: 10px solid black;
+            margin-bottom: 0px;
+        }
+
+        &.extra-padding {
+            padding: 90px 0 93px 0; 
+        }
+
+        &.cross-out-3 {
+            padding: 30px 0 87px 0; 
+        }
+
+        &.segment-2006 {
+            padding: 51px 0 93px 0;
+        }
+
+        &.year {
+            p {
+                margin-top: 0;
+                font-family: "Droid Sans", sans-serif;
+                font-size: 20px;
+                font-weight: 300;
+                letter-spacing: 1px;
+                line-height: 30px;
+            }
+            h3 {
+                text-decoration: underline;
+                background-color: @yellow;
+                display: inline-block; 
+                padding: 10px;
+                font-size: 30px;
+                font-family: "Inconsolata";
+                font-weight: 100;
+            }         
+           hr {
+                margin-left: 1px;
+                height: 10px;
+                width: 460px;
+                background-color: #000;
             }
 
+            &.decision {
+                padding: 74px 0 60px 0;
+                p { 
+                    padding: 44px;
+                    background-color: @yellow; 
+                    display: inline-block;
+                }
+            }
+        }
+
+        p {
+            font-family: "nimbus-sans-condensed", sans-serif;
+            font-size: 30px;
+            line-height: 35px;
+            font-weight: 900;
+        }
+    
+        &.quote p {
+            font-size: 25px;
+        }
+    }
+
+    /* :: BOTTOM SECTIONS 
+    // -------------------------*/
+
+    .sections-container {
+        padding: 136px 0 100px;
+
+        section {
+            background-color: @yellow;
+            margin-bottom: 103px;
+            padding: 10px;
+
+            h2 {
+                font-family: "nimbus-sans-condensed", sans-serif;
+                font-size: 30px;
+                text-align: left;
+
+            }
+            
+            p, ul {
+                font-family: "Droid Sans", sans-serif;
+                text-align: justify;
+                line-height: 35px;
+                font-size: 20px;
+            }
+
+            li {
+                line-height: 40px;
+
+            }
+
+            ul {
+                padding-left: 20px;
+            }
+
+            &.director {
+                max-height: 570px;
+            }
+            &.approach {
+                max-height: 1000px;
+            }
+            &.process {
+                max-height: 925px;
+            }
+        }
+    }
+
+        /* :: Navigation
+    // -------------------------*/
+
+        nav {
+            border-bottom: 10px solid black;
+            border-top: 10px solid black;
+            margin: 0 auto;
+            height: 285px;
+        }
+
+        nav a {
+            text-decoration: none;
+            display: block;
+            width: 320px;
+            height: 140px;
+            margin: 0 auto;
+            margin-top: 67px;
+            padding-top: 40px;
+            background-color: @yellow;
+            span {
+                font-family: "nimbus-sans-condensed", sans-serif;
+                font-size: 30px;
+            }
+        }
+
+        nav a:hover {
+            background-color: lighten(@yellow, 20%);
+            color: black;
+        }
+  
+        /* :: Footer
+    // -------------------------*/
+        
+        footer {
+            width: 1192px;
+            margin: 0 auto;
+
+            header {
+                margin: 108px 0 70px 0;
+                background: url("../images/filmmakers-bar.png") no-repeat center;
+
+                h1 {
+                    font-family: "nimbus-sans-condensed", sans-serif;
+                    font-size: 60px;
+                    font-weight: 900;
+                    letter-spacing: 5px;
+                }
+            }
+            section {
+                width: 580px;
+                float: right;
+                background-color: inherit;
+                
+                &.director-bio {
+                float: left;
+                }
+                h3 {
+                    font-family: "nimbus-sans-condensed", sans-serif;
+                    font-size: 20px;
+                    text-align: left;
+                }
+                p {
+                    text-align: justify;
+                    font-size: 15px;
+                }
+                ul {
+                    padding: 0;
+                    text-align: left;
+                }
+                a { text-decoration: none;}
+
+                a:hover, a:visited { color: #7e7e7e}
+            }
+        }
+
+    /* :: VIDEOS
+// -------------------------*/
+
+    .video {
+        position: relative;
+        width: 900px;
+        margin-top: 0px;
+        margin: 0 auto;
+    }
 
     /* :: Numering
 // -------------------------*/
+    .numbering {
+        font-size: 15px;
+        font-family: inconsolata;
+        position: absolute;
+        z-index: 1;
+    }
 
     .num-1-a {
-        top: 96px;
-        left: 3px;
+        top: 66px;
+        left: 29px;
     }
     .num-1-b {
-        top: 206px;
-        left: 580px;
+        top: 176px;
+        left: 590px;
     }   
     .num-2-a {
-        top: 426px;
-        left: 20px;
+        margin-left: -20px;
     }   
     .num-3-a {
-        top: 1940px;
-        left: 937px;
-    }    
+        top: 117px;
+        left: 931px;
+    }   
     .num-4-a-2 {
         top: 294px;
         left: -90px;
@@ -345,309 +374,7 @@ body {
         left: 265px;
     }
 
-    /* :: SEGMENTS
-// -------------------------*/
-    .slogan {
-        margin-top: 60px;
-    }
 
-    .segment { 
-        margin: 30px 0 30px 0;
-        border-bottom: 10px solid black;
-        padding: 30px 0 30px 0;
-        position: relative;
-    }
-    
-    .segment h3 { 
-        text-decoration: underline;
-        display: inline-block;
-        background-color: @yellow;
-        padding: 10px;
-     }
-    
-    .smaller {
-        width: 900px;
-        margin: 0 auto;
-    }
-
-    .small-2006 {
-        position: relative;
-        padding: 50px 150px 85px 150px;
-    }
-
-    .small-2007 {
-        position: relative;
-        padding: 30px 100px 0px 100px;
-        border: 0;
-
-        hr {
-            margin-left: 1px;
-            height: 10px;
-            width: 460px;
-            background-color: #000;
-            
-        }
-    }
-
-    #cross-out-2 {
-        padding: 50px 120px 80px 120px;
-    }    
-
-    #cross-out-3 {
-        padding: 40px 50px 70px 50px;
-    }
-
-    #cross-out-4 {
-        padding: 50px 160px 80px 160px;
-    }
-
-    .evidence p{
-        padding:  0 250px 0 250px;
-    }
-
-    .decides {
-        padding: 30px 250px 70px 250px;
-        p { 
-            padding: 28px 28px 28px 28px;
-            background-color: @yellow; 
-        }
-    }
-
-        /* :: BOTTOM SECTIONS
-// -------------------------*/
-
-    section {
-        position: relative;
-        background-color: @yellow;
-    }
-
-    .director {
-        margin-top: 138px;
-        height: 570px;
-    }
-
-    .approach {
-        margin-top: 100px;
-        height: 1000px;
-    }
-    
-    .process {
-        margin-top: 106px;
-        height: 925px;
-    }
-
-    /* :: CROSSING OUTS
-// -------------------------*/
-    .stand-out {
-        white-space: pre; 
-        background-color: white;
-    }
-
-    .cross-out {
-        position: relative;
-    }
-    
-    .crossing-line {
-        height: 8px;
-        position: absolute;
-        background-color: black;
-        z-index: -1;
-    }
-
-    .one-1 {
-        width: 636px;
-        top: 23px;
-        left: 235px;
-        transition: all 0s;
-    }
-    .one-2 {
-        width: 664px;
-        top: 44px;
-        left: 56px;
-        transition: all 0s;
-
-    }
-    .one-3 {
-        width: 664px;
-        top: 77px;
-        left: 51px;
-        transition: all 0s;
-    }
-    .one-4 {
-        width: 648px;
-        top: 109px;
-        left: 76px;
-        transition: all 0s;
-    }
-    .one-5 {
-        width: 468px;
-        top: 141px;
-        left: 98px;
-        transition: all 0s;
-    }
-    .one-6 {
-        width: 517px;
-        top: 190px;
-        left: 60px;
-        transition: all 0s;
-    }
-
-    // CROSS-2
-
-    .seven {
-        width: 517px;
-        top: 0px;
-        left: 60px;
-        transition: all 1s;
-    }    
-    .eight {
-        width: 517px;
-        top: 0px;
-        left: 60px;
-        transition: all 1s;
-    }    
-    .nine {
-        width: 517px;
-        top: 0px;
-        left: 60px;
-        transition: all 1s;
-    }    
-    .ten {
-        width: 517px;
-        top: 0px;
-        left: 60px;
-        transition: all 1s;
-    }
-
-    // CROSS-3
-
-    .three-1 {
-        width: 517px;
-        top: 0px;
-        left: 60px;
-        transition: all 1s;
-    }    
-    .three-2 {
-        width: 517px;
-        top: 0px;
-        left: 60px;
-        transition: all 1s;
-    }    
-    .three-3 {
-        width: 517px;
-        top: 0px;
-        left: 60px;
-        transition: all 1s;
-    }    
-    .three-4 {
-        width: 517px;
-        top: 0px;
-        left: 60px;
-        transition: all 1s;
-    }
-    .three-5 {
-        width: 517px;
-        top: 0px;
-        left: 60px;
-        transition: all 1s;
-    }
-
-    // CROSS 4
-    .four-1 {
-        width: 517px;
-        top: 0px;
-        left: 60px;
-        transition: all 1s;
-    }    
-    .four-2 {
-        width: 517px;
-        top: 0px;
-        left: 60px;
-        transition: all 1s;
-    }    
-    .four-3 {
-        width: 517px;
-        top: 0px;
-        left: 60px;
-        transition: all 1s;
-    }    
-    .four-4 {
-        width: 517px;
-        top: 0px;
-        left: 60px;
-        transition: all 1s;
-    }
-
-
-    .hide {
-        width: 0;
-    }
-
-
-    /* :: Navigation
-// -------------------------*/
-
-    nav {
-        border-bottom: 10px solid black;
-        border-top: 10px solid black;
-        margin: 0 auto;
-        margin-top: 205px;
-        width: 1000px;
-        height: 285px;
-    }
-
-    nav a {
-        text-decoration: none;
-        display: block;
-        width: 320px;
-        height: 140px;
-        margin: 0 auto;
-        margin-top: 67px;
-        padding-top: 40px;
-        background-color: @yellow;
-    }
-
-    nav a:hover {
-        background-color: lighten(@yellow, 20%);
-        color: black;
-    }
-
-    /* :: Footer
-// -------------------------*/
-    
-    footer {
-        width: 1192px;
-        margin: 0 auto;
-    }
-
-    footer header {
-        margin: 108px 0 70px 0;
-        background: url("../images/filmmakers-bar.png") no-repeat 50%;
-    }
-
-    footer section {
-        width: 580px;
-        float: right;
-        background-color: inherit;
-    }
-
-    .director-bio {
-        float: left;
-    }
-    
-    a { text-decoration: none;}
-
-    footer a:hover { color: #7e7e7e}
-
-    /* :: VIDEOS
-// -------------------------*/
-
-    .video {
-        position: relative;
-        width: 900px;
-        margin-top: 50px;
-        margin: 0 auto;
-    }
 
         /* :: IMAGES
 // -------------------------*/
