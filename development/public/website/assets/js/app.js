@@ -14,8 +14,8 @@
 
         var init = function ()
         {
-            // ns.pageInteractionInstance = new ns.PageInteraction();
-            ns.strikethroughonscroll = new ns.strikeThroughOnScroll();
+            ns.strikes = new ns.Strikes();
+            // ns.strikethroughonscroll = new ns.strikeThroughOnScroll();
         };
 
         init();
