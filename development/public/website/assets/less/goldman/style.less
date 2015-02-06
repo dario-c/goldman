@@ -193,7 +193,24 @@ body {
      .cross-out{
          position: relative;
 
-         p { }
+         .line {
+            position: relative;
+
+            .strike {
+                position: absolute;
+                top: 10px;
+                left: 0;
+                width: 0%;
+                height: 10px;
+                background-color: black;
+                z-index: -1;
+            }
+
+            .highlight {
+                background-color: white; 
+                z-index: 1;
+            }
+         }
          
          .line-container {
             position: absolute;
@@ -204,13 +221,8 @@ body {
             background-color: grey;
             z-index: -1;
             
-            span {
-                display: block;
-                position: relative;
-                padding: 0px;
-                background-color: black;
             }
-          } 
+
     }
 
 

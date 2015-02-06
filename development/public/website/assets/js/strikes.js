@@ -15,83 +15,71 @@
         var lines;
         var containers;
         var allStrikes  = [];
-        var scrollThresHold = 200;
+        var scrollThresHold = 400;
 
         var findAllTextLines = function() {
             containers = $(".strike-through");
             lines = containers.find(".line");
         };
 
-        var createStrikes = function(linesArray){
+
+         var createStrikes = function(linesArray){
             for(var x = 0; x < linesArray.length; x++) {
+
                 var newStrike = {};
                 var $line = $(linesArray[x]);
                 var lineOffset = $line.offset();
-                var parentOffset = $line.closest(".cross-out").offset();
 
-                newStrike.width = $line.innerWidth();
-                newStrike.height = $line.innerHeight();
-                newStrike.top = lineOffset.top - parentOffset.top;
-                newStrike.left = lineOffset.left - parentOffset.left;
-                newStrike.offsetPage = parentOffset.top;
+                newStrike.offsetPage = lineOffset.top;
 
                 allStrikes.push(newStrike);
-                console.log(parentOffset);
             }
         };
 
-        var appendStrikes = function(linesArray, allStrikes){
+        var appendStrikesToLine = function(linesArray, allStrikes){
             for(var x = 0; x < linesArray.length; x++) {
                 var $line = $(linesArray[x]);
 
-                var span = $("<span></span>");
-                span.css({ width: allStrikes[x].width, height: allStrikes[x].height, top: allStrikes[x].top, left: allStrikes[x].left});
-
-                $line.closest(".cross-out").find(".line-container").append(span);
+                var span = $("<span class='strike'></span>");
+                $line.append(span);
             }
         };
 
-        var start = true;
-        var finishScroll;
 
         var detectScrollLimit = function() {
             var strikes = allStrikes;
+
             for(var x = 0; x < allStrikes.length; x++){
+                var start =  allStrikes[x].offsetPage - $window.scrollTop();
+                var speed = 200;
 
 
-                // If I reach the startpoint 
-                if($window.scrollTop() + scrollThresHold >= allStrikes[x].offsetPage){
+                var ratio = (100 / speed);
 
-                    if(start){
-                        finishScroll = $window.scrollTop();
-                        start = false;
-                    }
+                if(start < scrollThresHold) {
 
+                    var percent = Math.round((scrollThresHold - start) * ratio);
+                    percent = Math.min(percent, 100);
 
-                    var newWidth = (($window.scrollTop() * allStrikes[0].width) / finishScroll) - (allStrikes[0].width);
-
-                    console.log(newWidth);
-
-                    // if(newWidth < allStrikes[x].width) {
-                        var span = $(".line-container").find("span")[x];
-                        $(span).css({ width: newWidth });
-                    // }
-
+                  $(lines[x]).find(".strike").css({ width: percent + "%" });
+                }
+                else {
+                    $(lines[x]).find(".strike").css({ width: "0%" });
                 }
             }
         };
 
         var init = function ()
         {
-           console.log(document.body.scrollTop);
            findAllTextLines();
            createStrikes(lines);
-           appendStrikes(lines, allStrikes);
+           // appendStrikes(lines, allStrikes);
+           appendStrikesToLine(lines, allStrikes);
            
-            // $window.on("scroll", function()
-            // {
-            //     window.requestAnimationFrame(detectScrollLimit);
-            // });
+            $window.on("scroll", function()
+            {
+                window.requestAnimationFrame(detectScrollLimit);
+            });
 
         };
 
