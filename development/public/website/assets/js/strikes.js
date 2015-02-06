@@ -47,17 +47,13 @@
 
 
         var detectScrollLimit = function() {
-            var strikes = allStrikes;
-
             for(var x = 0; x < allStrikes.length; x++){
                 var start =  allStrikes[x].offsetPage - $window.scrollTop();
                 var speed = 200;
 
-
                 var ratio = (100 / speed);
 
                 if(start < scrollThresHold) {
-
                     var percent = Math.round((scrollThresHold - start) * ratio);
                     percent = Math.min(percent, 100);
 
@@ -73,7 +69,6 @@
         {
            findAllTextLines();
            createStrikes(lines);
-           // appendStrikes(lines, allStrikes);
            appendStrikesToLine(lines, allStrikes);
            
             $window.on("scroll", function()

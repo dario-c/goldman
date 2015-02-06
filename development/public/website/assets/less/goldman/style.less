@@ -9,6 +9,7 @@
 @yellow: #ffe402;
 
 body {
+    overflow-x: hidden;
     font-family: "Droid Sans", sans-serif;
     text-align: center;
     color: #000;
@@ -222,18 +223,15 @@ body {
             z-index: -1;
             
             }
-
     }
-
 
     /* :: BOTTOM SECTIONS 
     // -------------------------*/
 
     .sections-container {
         margin: 0 auto;
-        height: 3276px;
-        padding: 0 0 100px;
-        margin-bottom: 100px;
+        min-height: 3266px;
+        padding: 0 0 84px;
         background: url("../images/letter-3.jpg") no-repeat center 111px;
 
         section {
@@ -267,14 +265,14 @@ body {
             }
 
             &.director {
-                max-height: 570px;
+                min-height: 570px;
                 margin-top: 136px;
             }
             &.approach {
-                max-height: 1000px;
+                min-height: 1000px;
             }
             &.process {
-                max-height: 925px;
+                // min-height: 925px;
                 position: relative;
             }
         }
@@ -288,8 +286,7 @@ body {
             height: 285px;
             border-bottom: 10px solid black;
             border-top: 10px solid black;
-            margin: 0 auto;
-            margin-top: 210px;
+            margin: 10px auto 0;
 
             a {
                 line-height: 34px;
@@ -299,16 +296,17 @@ body {
                 height: 140px;
                 margin: 0 auto;
                 margin-top: 67px;
-                padding-top: 34px;
+                padding-top: 54px;
                 background-color: @yellow;
-                span {
-                    font-family: "nimbus-sans-condensed", sans-serif;
-                    font-size: 30px;
-                    font-weight: 900;
-                }
+            
+                font-family: "nimbus-sans-condensed", sans-serif;
+                font-size: 30px;
+                font-weight: 900;
+                
             }
             a:hover {
                 background-color: lighten(@yellow, 20%);
+                text-decoration: underline;
                 color: black;
             }
             a:visited, a:link { color: black }
@@ -494,8 +492,8 @@ body {
         left: -310px;
     }
     .num-12-a {
-        top: 614px;
-        left: 958px;
+        top: 684px;
+        left: 957px;
     }   
 
     .num-13-a {
@@ -592,7 +590,7 @@ body {
         position: absolute;
         width: 356px;
         left: 961px;
-        top: 623px;
+        top: 696px;
         z-index: -1;
     }
     .img-chronicles {

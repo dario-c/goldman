@@ -15,7 +15,6 @@
         var init = function ()
         {
             ns.strikes = new ns.Strikes();
-            // ns.strikethroughonscroll = new ns.strikeThroughOnScroll();
         };
 
         init();
