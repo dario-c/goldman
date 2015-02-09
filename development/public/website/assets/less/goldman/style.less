@@ -323,7 +323,7 @@ body {
 
             header {
                 margin: 96px 0 55px 0;
-                background: url("../images/filmmakers-bar.png") no-repeat center;
+                background: url("../images/filmmakers-bar.jpg") no-repeat center;
 
                 h1 {
                     font-family: "nimbus-sans-condensed", sans-serif;
@@ -604,7 +604,15 @@ body {
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
-    .page-container {
+    .body {
         overflow-x: hidden; 
+    }
+    .page-container, .main-header, .sections-container, nav, footer {
+        width: 1090px;
+        margin: 0 auto;
+    }
+    footer section{
+        width: 529px;
+        // background-color: red;
     }
 }
