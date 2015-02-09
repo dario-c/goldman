@@ -15,7 +15,7 @@
         var lines;
         var containers;
         var allStrikes  = [];
-        var scrollThresHold = 400;
+        var scrollThresHold = 500;
 
         var findAllTextLines = function() {
             containers = $(".strike-through");
@@ -31,7 +31,7 @@
                 var lineOffset = $line.offset();
 
                 newStrike.offsetPage = lineOffset.top;
-
+                newStrike.size = $line.hasClass("small-line") ? "small" : "big";
                 allStrikes.push(newStrike);
             }
         };
@@ -46,7 +46,7 @@
         };
 
 
-        var detectScrollLimit = function() {
+        var strikeOnScroll = function() {
             for(var x = 0; x < allStrikes.length; x++){
                 var start =  allStrikes[x].offsetPage - $window.scrollTop();
                 var speed = 200;
@@ -58,6 +58,7 @@
                     percent = Math.min(percent, 100);
 
                   $(lines[x]).find(".strike").css({ width: percent + "%" });
+                  if (allStrikes[x].size === "small"){ $(lines[x]).find(".strike").css({ height : 10, top: 10 }); }
                 }
                 else {
                     $(lines[x]).find(".strike").css({ width: "0%" });
@@ -67,13 +68,17 @@
 
         var init = function ()
         {
-           findAllTextLines();
-           createStrikes(lines);
-           appendStrikesToLine(lines, allStrikes);
+            $window.on("load", function(){
+                console.log("load!");
+               findAllTextLines();
+               createStrikes(lines);
+               appendStrikesToLine(lines, allStrikes);
+            });
+
            
             $window.on("scroll", function()
             {
-                window.requestAnimationFrame(detectScrollLimit);
+                window.requestAnimationFrame(strikeOnScroll);
             });
 
         };
