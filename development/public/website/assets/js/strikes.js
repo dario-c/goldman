@@ -22,7 +22,6 @@
             lines = containers.find(".line");
         };
 
-
          var createStrikes = function(linesArray){
             for(var x = 0; x < linesArray.length; x++) {
 
@@ -44,7 +43,6 @@
                 $line.append(span);
             }
         };
-
 
         var strikeOnScroll = function() {
             for(var x = 0; x < allStrikes.length; x++){
@@ -69,7 +67,6 @@
         var init = function ()
         {
             $window.on("load", function(){
-                console.log("load!");
                findAllTextLines();
                createStrikes(lines);
                appendStrikesToLine(lines, allStrikes);
@@ -82,7 +79,6 @@
             });
 
         };
-
         init();
     };
 
