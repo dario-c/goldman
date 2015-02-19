@@ -30,14 +30,14 @@
     // Clean task.
     gulp.task("remove-build-folder", function()
     {
-        gulp.start("clean");
+        gulp.start("clean-deploy");
     });
     //--------------------
     
     /**
      * WATCH FOR CHANGES
      */
-    gulp.task("watch",  ["css", "inject"], function()
+    gulp.task("watch",  ["clean-css", "css", "inject"], function()
     {
         // Start livereload
         gulp.start("livereload");
@@ -61,7 +61,7 @@
      */
     gulp.task("build", function()
     {
-        runSequence("remove-build-folder", ["css", "jshint"], ["inject", "version", "tpl-rev", "copy"]);
+        runSequence("remove-build-folder", ["clean-css", "css", "jshint"], ["inject", "version", "tpl-rev", "copy"]);
     });
     //--------------------
 
@@ -75,7 +75,7 @@
         config.full = true;
         config.deploy = true;
 
-        runSequence("remove-build-folder", ["css", "jshint"], ["inject", "version", "tpl-rev", "copy"], "htmlmin");
+        runSequence("remove-build-folder", ["clean-css", "css", "jshint"], ["inject", "version", "tpl-rev", "copy"], "htmlmin");
     });
     //--------------------
 
